@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
+import { Fade } from "react-reveal";
 
 const allCategories = ["all", ...new Set(items.map((item) => item.category))];
 
@@ -23,8 +24,12 @@ function App() {
     <main>
       <section className="menu section">
         <div className="title">
-          <h2>Our Menu</h2>
-          <div className="underline"></div>
+          <Fade top>
+            <h2>Our Menu</h2>
+          </Fade>
+          <Fade left>
+            <div className="underline"></div>
+          </Fade>
         </div>
         <Categories categories={categories} filterItems={filterItems} />
         <Menu items={menuItems} />
